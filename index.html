@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote Eligibility Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Vote Eligibility Checker</h2>
+    
+    <label for="age">Enter Your Age:</label>
+    <input type="number" id="age" placeholder="Enter age in years">
+    
+    <button onclick="checkEligibility()">Check Eligibility</button>
+    
+    <p id="result"></p>
+</div>
+
+<script>
+function checkEligibility() {
+    const age = document.getElementById('age').value;
+    const result = document.getElementById('result');
+
+    if (age === "") {
+        result.textContent = "Please enter your age.";
+        result.style.color = "red";
+    } else if (age >= 18) {
+        result.textContent = "You are eligible to vote.";
+        result.style.color = "green";
+    } else {
+        result.textContent = "You are not eligible to vote.";
+        result.style.color = "orange";
+    }
+}
+</script>
+
+</body>
+</html>
